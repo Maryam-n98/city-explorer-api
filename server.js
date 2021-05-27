@@ -52,7 +52,7 @@ server.get('/weather',(req,res)=>{
       } 
       
       catch {
-        res.status(500).send('Sorryxx ');
+        res.status(500).send('Sorry we havent the weather for this city ');
       }
       
 })
