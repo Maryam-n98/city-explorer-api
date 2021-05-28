@@ -24,7 +24,7 @@ server.listen(PORT,() => {
           
             
           
-             this.des=`Low of :${element.low_temp}and a high of ${element.max_temp} with a${element.description} `
+             this.des=`Low of :${element.low_temp}and a high of ${element.max_temp} with a${element.weather.description} `
              this.date= element.valid_date;
             
         
@@ -35,7 +35,7 @@ server.get('/weather',(req,res)=>{
   let cityname = req.query.cityname;
 
   let city = weather.find(item=>{
-    if (cityname== item.city_name ){
+    if (cityname.toLocaleLowerCase() == item.city_name.toLocaleLowerCase() ){
 
       return item;
     }
