@@ -7,7 +7,7 @@ require('dotenv').config();
 const axios = require('axios');
 
 server1.use(cors());
-// const PORT2 =3003;
+// const PORT2 =3001;
 const PORT2 =process.env.PORT;
 const WEATHER_API_KEY=process.env.WEATHER_API_KEY;
 const MOVIE_API_KEY=process.env.MOVIE_API_KEY;
