@@ -5,6 +5,7 @@ const cors=require('cors');
 require('dotenv').config();
 const axios = require('axios');
 server1.use(cors());
+
 const PORT =process.env.PORT ;
 
 server1.listen(PORT,()=>{

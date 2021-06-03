@@ -1,10 +1,13 @@
 const axios = require('axios');
+
 let inMemory={};
+
 const MOVIE_API_KEY=process.env.MOVIE_API_KEY;
 function gettingMovies(request,response) {
     let requsetedMovie=request.query.desired_city;
 
     let movieUrlReq=`https://api.themoviedb.org/3/search/movie?api_key=${MOVIE_API_KEY}&query=${requsetedMovie}`;
+
  
     if (inMemory[requsetedMovie] !== undefined) {
         response.send(inMemory[requsetedMovie]);
@@ -17,5 +20,5 @@ function gettingMovies(request,response) {
             inMemory[requsetedMovie]=movies;
             console.log('moviiiees');
         })  }
-}
+
 module.exports = gettingMovies;
